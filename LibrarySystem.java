@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibrarySystem {
+public class LibrarySystem implements Subject{
     private List<Book> books = new ArrayList<>();
     private List<User> users = new ArrayList<>();
     private List<BorrowRecord> borrowRecords = new ArrayList<>();
@@ -16,7 +16,7 @@ public class LibrarySystem {
     public void addBook(Book book) {
         books.add(book);
         storage.saveBook(book);
-        notifyObservers("Nouveau livre ajouté: " + book.getTitle());
+        notifyObservers("Nouveau livre ajoutÃ©: " + book.getTitle());
     }
 
     public void removeBook(int bookId) {
@@ -27,7 +27,7 @@ public class LibrarySystem {
     	    }
     	}
 
-        notifyObservers("Livre supprimé (ID): " + bookId);
+        notifyObservers("Livre supprimÃ© (ID): " + bookId);
     }
 
     public void borrowBook(int userId, int bookId) {
@@ -35,7 +35,7 @@ public class LibrarySystem {
             if (book.getId() == bookId && book.isAvailable()) {
                 book.setAvailable(false);
                 borrowRecords.add(new BorrowRecord(userId, bookId));
-                notifyObservers("Livre emprunté: " + book.getTitle());
+                notifyObservers("Livre empruntÃ©: " + book.getTitle());
                 return;
             }
         }
@@ -49,7 +49,7 @@ public class LibrarySystem {
                 for (Book book : books) {
                     if (book.getId() == bookId) {
                         book.setAvailable(true);
-                        notifyObservers("Livre retourné: " + book.getTitle());
+                        notifyObservers("Livre retournÃ©: " + book.getTitle());
                         return;
                     }
                 }
