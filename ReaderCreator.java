@@ -1,9 +1,9 @@
 
-public class Reader implements User {
+public class ReaderCreator implements User {
     private int id;
     private String name;
 
-    public Reader(int id, String name) {
+    public ReaderCreator(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -20,12 +20,12 @@ public class Reader implements User {
 
     @Override
     public boolean login(String username, String password) {
-        System.out.println(name + " (Lecteur) est connecté.");
+        System.out.println(name + " (Lecteur) est connectÃ©.");
         return true;
     }
 
     @Override
     public void logout() {
-        System.out.println(name + " (Lecteur) s'est déconnecté.");
+        System.out.println(name + " (Lecteur) s'est dÃ©connectÃ©.");
     }
 }
