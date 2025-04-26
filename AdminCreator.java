@@ -1,10 +1,10 @@
 
 
-public class Admin implements User {
+public class AdminCreator implements User {
     private int id;
     private String name;
 
-    public Admin(int id, String name) {
+    public AdminCreator(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -22,12 +22,12 @@ public class Admin implements User {
     @Override
     public boolean login(String username, String password) {
         // Simplification: mot de passe toujours correct
-        System.out.println(name + " (Admin) est connecté.");
+        System.out.println(name + " (Admin) est connectÃ©.");
         return true;
     }
 
     @Override
     public void logout() {
-        System.out.println(name + " (Admin) s'est déconnecté.");
+        System.out.println(name + " (Admin) s'est dÃ©connectÃ©.");
     }
 }
