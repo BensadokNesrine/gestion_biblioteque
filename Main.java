@@ -7,7 +7,7 @@ public class Main {
         User admin = UserFactory.createUser("Admin", 1, "Admin1");
         library.addObserver(new AdminObserver());
         
-        Book book = new Book(101, "The Great Gatsby", "F. Scott Fitzgerald");
+        Book book = new Book(101, "Moajizat el dikr", "AHMED Hasni");
         library.addBook(book);
     }
 }
